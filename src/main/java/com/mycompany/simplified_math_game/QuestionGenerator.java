@@ -2,7 +2,6 @@ package com.mycompany.simplified_math_game;
 import java.util.Random;
 
 public class QuestionGenerator {
-
     private Random random;
 
     public QuestionGenerator() {
@@ -21,7 +20,12 @@ public class QuestionGenerator {
             case 1:
                 question = "¿Cuánto es " + operand1 + " + " + operand2 + "?";
                 break;
-            // Aquí puedes agregar más tipos de operaciones si quieres
+            case 2:
+                question = "¿Cuánto es " + operand1 + " - " + operand2 + "?";
+                break;
+            case 3:
+                question = "¿Cuánto es " + operand1 + " x " + operand2 + "?";
+                break;
             default:
                 question = "Operación no válida";
                 break;
@@ -35,7 +39,12 @@ public class QuestionGenerator {
             case 1:
                 answer = operand1 + operand2;
                 break;
-            // Aquí puedes agregar más tipos de operaciones si quieres
+            case 2:
+                answer = operand1 - operand2;
+                break;
+            case 3:
+                answer = operand1 * operand2;
+                break;
             default:
                 System.out.println("Operación no válida");
                 break;
