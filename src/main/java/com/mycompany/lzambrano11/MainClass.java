@@ -1,4 +1,6 @@
-package com.mycompany.simplified_math_game;
+import com.mycompany.simplified_math_game.QuestionGenerator;
+import com.mycompany.simplified_math_game.UserInterface;
+
 
 public class MainClass {
     public static void main(String[] args) {
@@ -7,15 +9,18 @@ public class MainClass {
 
         int correctAnswers = 0;
         int totalQuestions = 0;
+        int operationType = 1;  // Por ahora, solo suma
 
         while (correctAnswers < 10) {
             int[] operands = qg.generateOperands();
-            String question = qg.generateQuestion(operands[0], operands[1]);
+            String question = qg.generateQuestion(operands[0], operands[1], operationType);
 
             ui.showQuestion(question);
             int userAnswer = ui.getUserAnswer();
 
-            if (userAnswer == operands[0] + operands[1]) {
+            int correctAnswer = qg.calculateAnswer(operands[0], operands[1], operationType);
+
+            if (userAnswer == correctAnswer) {
                 correctAnswers++;
             }
             

@@ -1,5 +1,4 @@
 package com.mycompany.simplified_math_game;
-
 import java.util.Scanner;
 
 public class UserInterface {
